@@ -42,6 +42,7 @@ local schema = {
               required = true,
               default = "Bye-World" } },
           { ttl = { -- self defined field
+              description = "A map that defines rate limits for the plugin.",
               type = "integer",
               default = 600,
               required = true,
