@@ -14,6 +14,26 @@ local schema = {
         -- The 'config' record is the custom part of the plugin schema
         type = "record",
         fields = {
+          {
+            limits = {
+              type = "map",
+              required = true,
+              len_min = 1,
+              keys = { type = "string" },
+              values = {
+                type = "record",
+                required = true,
+                fields = {
+                  { second = { type = "number", gt = 0 }, },
+                  { minute = { type = "number", gt = 0 }, },
+                  { hour = { type = "number", gt = 0 }, },
+                  { day = { type = "number", gt = 0 }, },
+                  { month = { type = "number", gt = 0 }, },
+                  { year = { type = "number", gt = 0 }, },
+                }
+              }
+            }
+          },
           -- a standard defined field (typedef), with some customizations
           { request_header = typedefs.header_name {
               required = true,
