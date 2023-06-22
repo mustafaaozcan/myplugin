@@ -1,7 +1,7 @@
 local plugin_name = "myplugin"
 local package_name = "kong-plugin-" .. plugin_name
 local package_version = "0.1.0"
-local rockspec_format = "3.0"
+local rockspec_revision  = "1.0"
 
 local github_account_name = "mustafaaozcan"
 local github_repo_name = "myplugin"
@@ -10,6 +10,7 @@ local git_checkout = "master"
 
 package = package_name
 version = package_version .. "-" .. rockspec_revision
+rockspec_format = "3.0"
 supported_platforms = { "linux", "macosx" }
 source = {
   url = "git+https://github.com/"..github_account_name.."/"..github_repo_name..".git",
